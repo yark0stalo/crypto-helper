@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import getCryptoSparkline from "./utils/sparkline";
+import getCryptoSparkline from "../public/sparkline.js";
 import currencyData from "./data/currency-data";
 import getExchangePrices from "./utils/exchange.js";
 

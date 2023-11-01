@@ -1,4 +1,4 @@
-import currencyData from "../data/currency-data";
+import currencyData from "../src/data/currency-data";
 
 /* eslint-disable no-undef */
 let color = "#FFC633";
