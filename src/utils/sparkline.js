@@ -9,6 +9,8 @@ let API_URL = [
   "?sparkline=true",
 ];
 
+let sparklines = {};
+
 function getCryptoSparkline(currencyName) {
   fetch(API_URL[0] + currencyName + API_URL[2])
     .then((res) => res.json())
@@ -19,6 +21,7 @@ function getCryptoSparkline(currencyName) {
       let sparklinePrices = data["market_data"]["sparkline_7d"]["price"];
       currencyData[currencyName].price =
         sparklinePrices[sparklinePrices.length - 1];
+      sparklines[currencyName] = sparklinePrices;
       return sparklinePrices;
     })
     .then((sparklinePrices) => {

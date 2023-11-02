@@ -6,12 +6,12 @@ import getCryptoSparkline from "./utils/sparkline.js";
 import currencyData from "./data/currency-data";
 import getExchangePrices from "./utils/exchange.js";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App currencyData={currencyData} />
-  </React.StrictMode>
-);
+let app = <App currencyData={currencyData} />;
 for (const cur in currencyData) {
   getCryptoSparkline(cur);
 }
-getExchangePrices();
+getExchangePrices().then(() => {
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>{app}</React.StrictMode>
+  );
+});
