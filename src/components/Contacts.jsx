@@ -1,7 +1,7 @@
 import "./Contacts.css";
-import gitLogo from "/github.svg";
-import instLogo from "/linkedIn.svg";
-import twitterLogo from "/twitter.svg";
+import gitLogo from "../assets/images/github.svg";
+import instLogo from "../assets/images/linkedIn.svg";
+import twitterLogo from "../assets/images/twitter.svg";
 
 function Contacts() {
   return (
