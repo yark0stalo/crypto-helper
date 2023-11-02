@@ -2,31 +2,31 @@ const currencyData = {
   bitcoin: {
     abbr: "BTC",
     curName: "Bitcoin",
-    logoPath: "src/assets/images/bitcoin.svg",
+    logoPath: "src/assets/images/currency/bitcoin.svg",
     price: 0,
   },
   ethereum: {
     abbr: "ETH",
     curName: "Ethereum",
-    logoPath: "src/assets/images/ethereum.svg",
+    logoPath: "src/assets/images/currency/ethereum.svg",
     price: 0,
   },
   tron: {
     abbr: "TRX",
     curName: "Tron",
-    logoPath: "src/assets/images/tron.svg",
+    logoPath: "src/assets/images/currency/tron.svg",
     price: 0,
   },
   solana: {
     abbr: "SOL",
     curName: "Solana",
-    logoPath: "src/assets/images/solana.svg",
+    logoPath: "src/assets/images/currency/solana.svg",
     price: 0,
   },
   dogecoin: {
     abbr: "DOGE",
     curName: "Dogecoin",
-    logoPath: "src/assets/images/doge.svg",
+    logoPath: "src/assets/images/currency/doge.svg",
     price: 0,
   },
 };
