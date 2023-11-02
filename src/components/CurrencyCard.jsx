@@ -18,7 +18,7 @@ function CurrencyCard({ curData }) {
         <div className="currency-decription">
           <img
             className="currency-logo"
-            src={curData.logoPath}
+            src={"./" + curData.logoPath}
             alt="cur-logo"
           />
           <p className="currency-name">
