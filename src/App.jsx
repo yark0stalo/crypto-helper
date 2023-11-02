@@ -5,7 +5,6 @@ import viteLogo from '/vite.svg' */
 import "./App.css";
 import Footer from "./components/Footer.jsx";
 import CurrencyCardsContainer from "./components/CurrencyCardsContainer";
-import CurrencyCard from "./components/CurrencyCard";
 
 /* function App() {
   const [count, setCount] = useState(0)
