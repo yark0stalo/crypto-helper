@@ -2,17 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import getCryptoSparkline from "./utils/sparkline.js";
 import currencyData from "./data/currency-data";
-import getExchangePrices from "./utils/exchange.js";
+import { ExchangeUtility } from "./utils/exchange.js";
+import { CryptoController } from "./utils/sparkline.js";
 
+var cryptoController;
+let exchange;
+export async function Initialize() {
+  exchange = new ExchangeUtility();
+  cryptoController = new CryptoController(currencyData);
+  await exchange.getExchangePrices();
+  for (const crypto in currencyData) {
+    await cryptoController.getCurrentCryptoPrice(crypto);
+  }
+}
+await Initialize();
 let app = <App currencyData={currencyData} />;
 
-getExchangePrices().then(() => {
-  ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>{app}</React.StrictMode>
-  );
-});
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>{app}</React.StrictMode>
+);
+
 for (const cur in currencyData) {
-  getCryptoSparkline(cur);
+  await cryptoController.getCryptoSparklineData(cur);
+  cryptoController.createSparklineChart(cur, cryptoController.sparklines);
 }
